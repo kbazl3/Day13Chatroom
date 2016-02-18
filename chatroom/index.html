@@ -11,10 +11,10 @@
       <form ng-submit="postData()">
         <input class="form-control text-box" type="text" ng-model="message" placeholder="Message">
       </form>
-      <input ng-model="filt"></input>
+      
 
       <div class="messages-container">
-        <p ng-repeat="message in messages"> {{message.text | filter: }} {{message.createdAt | time}} </p>
+        <p ng-repeat="message in messages"> {{message.text }} {{message.createdAt | time}} </p>
       </div>
     </div>
     
