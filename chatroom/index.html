@@ -11,15 +11,19 @@
       <form ng-submit="postData()">
         <input class="form-control text-box" type="text" ng-model="message" placeholder="Message">
       </form>
+      <input ng-model="filt"></input>
+
       <div class="messages-container">
-        <p ng-repeat="message in messages"> {{message.text}} </p>
+        <p ng-repeat="message in messages"> {{message.text | filter: }} {{message.createdAt | time}} </p>
       </div>
     </div>
+    
     <script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.2.19.min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.min.js"></script>
     <script src="js/app.js"></script>
     <script src="js/mainCtrl.js"></script>
     <script src="js/parseService.js"></script>
     <script src="js/defaultHeaders.js"></script>
+    <script src="js/filter.js"></script>
   </body>
 </html>
